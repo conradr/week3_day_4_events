@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<h1>My events List!</h1>
+{% for task in tasks %}
+<div>
+  <p>
+    {{loop.index }}
+    <a href="/tasks/{{tasks.index(task)}}">{{ task.title }}</a>
+    {% if task.done %}
+    <span>&#9989;</span>
+    {% else %}
+    <span>&#x1F600;</span>
+    {% endif %}
+  </p>
+</div>
+{% endfor %} {% endblock %}
